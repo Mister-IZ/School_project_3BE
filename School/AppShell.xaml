@@ -4,11 +4,26 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:School"
+    xmlns:Views="clr-namespace:School.Views"
     Shell.FlyoutBehavior="Disabled">
-
+    
+    <TabBar>
     <ShellContent
-        Title="Home"
+        Title="Acceuil"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+    <ShellContent
+        Title="Etudiant"
+        ContentTemplate="{DataTemplate Views:Student}"
+        Route="MainPage" />
+    <ShellContent
+        Title="Professeur"
+        ContentTemplate="{DataTemplate Views:Teacher}"
+        Route="MainPage" />
+    <ShellContent
+        Title="Activité"
+        ContentTemplate="{DataTemplate Views:Activity}"
+        Route="MainPage" />
+    </TabBar>
 
 </Shell>
