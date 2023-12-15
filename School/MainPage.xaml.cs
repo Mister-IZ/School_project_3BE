@@ -27,7 +27,7 @@ namespace School
         {
             // Ajoutez le code ici pour gérer le clic sur le bouton "Créer Enseignant"
             // Par exemple, vous pouvez naviguer vers la page des enseignants comme vous l'avez fait pour le bouton Counter.
-            Navigation.PushAsync(new TeacherPage());
+            Navigation.PushAsync(new TeacherPage2());
         }
 
 
@@ -35,14 +35,14 @@ namespace School
         {
             // Ajoutez le code ici pour gérer le clic sur le bouton "Créer Enseignant"
             // Par exemple, vous pouvez naviguer vers la page des enseignants comme vous l'avez fait pour le bouton Counter.
-            Navigation.PushAsync(new ActivityPage());
+            Navigation.PushAsync(new ActivityPage2());
         }
 
 		    private void OnStudentPageButtonClicked(object sender, EventArgs e)
         {
             // Ajoutez le code ici pour gérer le clic sur le bouton "Créer Enseignant"
             // Par exemple, vous pouvez naviguer vers la page des enseignants comme vous l'avez fait pour le bouton Counter.
-            Navigation.PushAsync(new StudentPage());
+            Navigation.PushAsync(new StudentPage2());
         }
     }
 }
