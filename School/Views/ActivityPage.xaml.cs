@@ -1,8 +1,8 @@
 namespace School.Views;
 
-public partial class Activity : ContentPage
+public partial class ActivityPage : ContentPage
 {
-	public Activity()
+	public ActivityPage()
 	{
 		InitializeComponent();
 	}

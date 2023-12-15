@@ -34,6 +34,22 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
+            <Button
+                x:Name="teacherPageButton"
+                Text="Entrer un nouveau professeur"
+                Clicked="OnTeacherPageButtonClicked"
+                HorizontalOptions="Center" />
+            <Button
+                x:Name="activityPageButton"
+                Text="Entrer une nouvelle activité"
+                Clicked="OnActivityPageButtonClicked"
+                HorizontalOptions="Center" />
+            <Button
+                x:Name="studentPageButton"
+                Text="Entrer un nouvel étudiant"
+                Clicked="OnStudentPageButtonClicked"
+                HorizontalOptions="Center" />
+            
 
         </VerticalStackLayout>
     </ScrollView>

@@ -1,9 +1,10 @@
 namespace School.Views;
 
-public partial class Student : ContentPage
+public partial class StudentPage : ContentPage
 {
-	public Student()
+	public StudentPage()
 	{
+		
 		InitializeComponent();
 	}
 }
