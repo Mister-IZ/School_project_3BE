@@ -5,8 +5,11 @@
              Title="Formulaire des étudiants">
     <VerticalStackLayout>
         <Label 
-            Text=""
+            Text="Veuillez entrer un étudiant"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+            <Entry x:Name="nameEntered" Placeholder="Entrez le nom" />
+            <Button x:Name="createStudentButton" Text="Créer étudiant" Clicked="OnCreateStudentClicked" />
     </VerticalStackLayout>
 </ContentPage>

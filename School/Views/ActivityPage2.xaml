@@ -8,5 +8,9 @@
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+            
+            <Entry x:Name="courseEntered" Placeholder="Entrez l'activité" />
+            <Button x:Name="createActivityButton" Text="Créer activitée" Clicked="OnCreateActivityClicked" />
     </VerticalStackLayout>
 </ContentPage>

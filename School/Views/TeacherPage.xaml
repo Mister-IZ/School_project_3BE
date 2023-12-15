@@ -6,12 +6,10 @@
     
     <VerticalStackLayout>
         <Label 
-            Text="C'est la page professeur"
+            Text="Voici la liste des professeurs enregistrées"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <Entry x:Name="nameEntered" Placeholder="Entrez le nom" />
-        <Entry x:Name="courseEntered" Placeholder="Entrez la matière" />
-        <Button x:Name="createTeacherButton" Text="Créer enseignant" Clicked="OnCreateTeacherClicked" />
+        
     </VerticalStackLayout>
 </ContentPage>

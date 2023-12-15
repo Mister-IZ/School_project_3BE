@@ -5,7 +5,7 @@
              Title="Liste des Etudiants">
     <VerticalStackLayout>
         <Label 
-            Text="C'est la page étudiant"
+            Text="Voici la liste des étudiants enregistrés"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>

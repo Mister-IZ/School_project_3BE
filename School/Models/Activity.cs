@@ -1,4 +1,4 @@
-public class Activity
+public class ActivityModel
 {
-    public string name { get; set; }
+    public string course { get; set; }
 }

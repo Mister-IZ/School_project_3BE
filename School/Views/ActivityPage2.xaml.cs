@@ -6,4 +6,20 @@ public partial class ActivityPage2 : ContentPage
 	{
 		InitializeComponent();
 	}
+
+
+	private void OnCreateActivityClicked(object sender, EventArgs e)
+    {
+        var activityModel = new ActivityModel
+		{
+            
+                course = courseEntered.Text
+        };
+
+            var activityRepository = new ActivityRepository();
+            activityRepository.SaveActivitys(activityModel);
+
+		Navigation.PushAsync(new ActivityPage());
+    }
 }
+	
