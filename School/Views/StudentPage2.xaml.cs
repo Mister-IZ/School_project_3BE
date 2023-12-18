@@ -21,7 +21,7 @@ namespace School.Views
             var teacherRepository = new StudentRepository();
             teacherRepository.SaveStudents(studentModel);
 
-            Navigation.PushAsync(new StudentPage());
+            Navigation.PushAsync(new MainPage());
         }
     }
 }

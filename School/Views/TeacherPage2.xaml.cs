@@ -20,7 +20,7 @@ namespace School.Views
             var teacherRepository = new TeacherRepository();
             teacherRepository.SaveTeachers(teacherModel);
 
-            Navigation.PushAsync(new TeacherPage());
+            Navigation.PushAsync(new MainPage());
         }
     }
 }

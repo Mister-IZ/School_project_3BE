@@ -19,7 +19,7 @@ public partial class ActivityPage2 : ContentPage
             var activityRepository = new ActivityRepository();
             activityRepository.SaveActivitys(activityModel);
 
-		Navigation.PushAsync(new ActivityPage());
+		Navigation.PushAsync(new MainPage());
     }
 }
 	
