@@ -11,10 +11,6 @@
     
     <TabBar>
     <ShellContent
-        Title="Color"
-        ContentTemplate="{DataTemplate local:ColorPage}"
-        Route="MainPage" />
-    <ShellContent
         Title="Acceuil"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />

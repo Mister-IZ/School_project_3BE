@@ -29,27 +29,35 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+
             <Button
                 x:Name="teacherPageButton"
                 Text="Entrer un nouveau professeur"
                 Clicked="OnTeacherPageButtonClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center" 
+                TextColor="{DynamicResource TextColor}"/>
             <Button
                 x:Name="activityPageButton"
                 Text="Entrer une nouvelle activité"
                 Clicked="OnActivityPageButtonClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center" 
+                TextColor="{DynamicResource TextColor}"/>
             <Button
                 x:Name="studentPageButton"
                 Text="Entrer un nouvel étudiant"
                 Clicked="OnStudentPageButtonClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center" 
+                TextColor="{DynamicResource TextColor}"/>
+                
+            <!-- Séparation visuelle (espace) -->
+            <BoxView HeightRequest="20" />
+
+            <Button
+                x:Name="colorPageButton"
+                Text="Theme"
+                Clicked="OnColorPageButtonClicked"
+                HorizontalOptions="Center" 
+                TextColor="{DynamicResource TextColor}"/>
             
 
         </VerticalStackLayout>

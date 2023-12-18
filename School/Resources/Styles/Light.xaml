@@ -5,7 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="School.Resources.Styles.Light">
 
-    <Color x:Key="BackgroundColor">#FFFFFF</Color>
-    <Color x:Key="TextColor">#333333</Color>
-    <Color x:Key="InputBackgroundColor">#CCCCCC</Color>
+<Color x:Key="BackgroundColor">#E0E0E0</Color> <!-- Gris légèrement foncé -->
+<Color x:Key="TextColor">#000000</Color>     <!-- Noir pour un bon contraste -->
+<Color x:Key="InputBackgroundColor">#666666</Color> <!-- Couleur pour les zones de saisie -->
+
 </ResourceDictionary>
