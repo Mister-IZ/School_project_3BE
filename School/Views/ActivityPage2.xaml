@@ -6,12 +6,15 @@
              Title="Formulaire des activités">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Veuillez rajouter une activité pour l'établissement"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
             
             <Entry x:Name="courseEntered" Placeholder="Entrez l'activité" />
             <Button x:Name="createActivityButton" Text="Créer activitée" Clicked="OnCreateActivityClicked" />
+    
+    <!-- Ajoutez un bouton pour revenir à la MainPage -->
+    <Button Text="Revenir à l'Acceuil " Clicked="OnReturnToMainPageClicked" />
     </VerticalStackLayout>
 </ContentPage>

@@ -1,6 +1,6 @@
 
-namespace School.Views
-{
+namespace School.Views;
+
     public partial class StudentPage2 : ContentPage
     {
         public StudentPage2()
@@ -18,10 +18,17 @@ namespace School.Views
                 
             };
 
-            var teacherRepository = new StudentRepository();
-            teacherRepository.SaveStudents(studentModel);
+            var studentRepository = new StudentRepository();
+            studentRepository.SaveStudents(studentModel);
 
             Navigation.PushAsync(new MainPage());
         }
+    
+
+        private void OnReturnToMainPageClicked(object sender, EventArgs e)
+    {
+
+        Navigation.PushAsync(new MainPage());
     }
+    
 }

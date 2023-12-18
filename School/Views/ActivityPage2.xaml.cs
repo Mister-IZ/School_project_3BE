@@ -21,5 +21,11 @@ public partial class ActivityPage2 : ContentPage
 
 		Navigation.PushAsync(new MainPage());
     }
+
+        private void OnReturnToMainPageClicked(object sender, EventArgs e)
+    {
+
+        Navigation.PushAsync(new MainPage());
+    }
 }
 	

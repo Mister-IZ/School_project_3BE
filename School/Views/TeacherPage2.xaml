@@ -6,12 +6,15 @@
              Title="Formulaire des profs">
     <VerticalStackLayout>
         <Label 
-            Text="Veuillez entrer un professeur"
+            Text="Veuillez entrer le nom d'un nouvel enseignant"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
             <Entry x:Name="nameEntered" Placeholder="Entrez le nom" />
             <Entry x:Name="courseEntered" Placeholder="Entrez la matière" />
             <Button x:Name="createTeacherButton" Text="Créer enseignant" Clicked="OnCreateTeacherClicked" />
+    
+    <!-- Ajoutez un bouton pour revenir à la MainPage -->
+    <Button Text="Revenir à l'Acceuil " Clicked="OnReturnToMainPageClicked" />
     </VerticalStackLayout>
 </ContentPage>

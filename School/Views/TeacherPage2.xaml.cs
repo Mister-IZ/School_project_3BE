@@ -1,5 +1,5 @@
-namespace School.Views
-{
+namespace School.Views;
+
     public partial class TeacherPage2 : ContentPage
     {
         public TeacherPage2()
@@ -22,5 +22,10 @@ namespace School.Views
 
             Navigation.PushAsync(new MainPage());
         }
+    
+        private void OnReturnToMainPageClicked(object sender, EventArgs e)
+    {
+
+        Navigation.PushAsync(new MainPage());
     }
 }

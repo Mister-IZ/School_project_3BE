@@ -6,4 +6,10 @@ public partial class ActivityPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	    private void OnReturnToMainPageClicked(object sender, EventArgs e)
+    {
+
+        Navigation.PushAsync(new MainPage());
+    }
 }
