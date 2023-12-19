@@ -11,10 +11,14 @@
             HorizontalOptions="Center" />
 
             
-            <Entry x:Name="courseEntered" Placeholder="Entrez l'activité" />
+            <Entry x:Name="courseEntered" Placeholder="Entrez le nom de l'activité" />
+            <Entry x:Name="courseCode" Placeholder="Entrez le code de l'activité" />
+            <Entry x:Name="courseCredits" Placeholder="Entrez le nommbre de crédits de l'activité" />
+            <Entry x:Name="courseTeacher" Placeholder="Change ca ! Il faut qu'on ai une liste déroulante avec le choix des profs présent" />
+            
             <Button x:Name="createActivityButton" Text="Créer activitée" Clicked="OnCreateActivityClicked" />
     
     <!-- Ajoutez un bouton pour revenir à la MainPage -->
-    <Button Text="Revenir à l'Acceuil " Clicked="OnReturnToMainPageClicked" />
+    <Button Text="Acceuil" Clicked="OnReturnToMainPageClicked" />
     </VerticalStackLayout>
 </ContentPage>

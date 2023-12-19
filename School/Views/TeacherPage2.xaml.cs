@@ -13,8 +13,9 @@ namespace School.Views;
         {
             var teacherModel = new TeacherModel
             {
-                name = nameEntered.Text,
-                course = courseEntered.Text
+                firstName = firstnameEntered.Text,
+                lastName = lastnameEntered.Text,
+                salary = salaryEntered.Text,
             };
 
             var teacherRepository = new TeacherRepository();

@@ -14,7 +14,8 @@ namespace School.Views;
         {
             var studentModel = new StudentModel
             {
-                name = nameEntered.Text,
+                firstname = firstnameEntered.Text,
+                lastname = lastnameEntered.Text,
                 
             };
 

@@ -12,8 +12,10 @@ public partial class ActivityPage2 : ContentPage
     {
         var activityModel = new ActivityModel
 		{
-            
-                course = courseEntered.Text
+                course = courseEntered.Text,
+                code = courseCode.Text,
+                ECTS = courseCredits.Text,
+                Teacher = courseTeacher.Text,
         };
 
             var activityRepository = new ActivityRepository();

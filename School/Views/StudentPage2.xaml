@@ -10,10 +10,11 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-            <Entry x:Name="nameEntered" Placeholder="Entrez le nom" />
+            <Entry x:Name="firstnameEntered" Placeholder="Entrez le prénom" />
+            <Entry x:Name="lastnameEntered" Placeholder="Entrez le nom" />
             <Button x:Name="createStudentButton" Text="Créer étudiant" Clicked="OnCreateStudentClicked" />
     
     <!-- Ajoutez un bouton pour revenir à la MainPage -->
-    <Button Text="Revenir à l'Acceuil " Clicked="OnReturnToMainPageClicked" />
+    <Button Text="Acceuil" Clicked="OnReturnToMainPageClicked" />
     </VerticalStackLayout>
 </ContentPage>
