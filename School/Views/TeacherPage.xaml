@@ -7,11 +7,50 @@
     
     <VerticalStackLayout>
         <Label 
-            Text="Voici la liste des professeurs enregistrées"
+            Text="Voici la liste des professeurs enregistrés"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-    <!-- Ajoutez un bouton pour revenir à la MainPage -->
-    <Button Text="Revenir à l'Acceuil " Clicked="OnReturnToMainPageClicked" />
+        <!-- Ajoutez un ListView pour afficher la liste des enseignants -->
+        <ListView x:Name="TeachersListView" HasUnevenRows="True">
+            <ListView.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Prénom" Grid.Column="0" Margin="10" />
+                    <Label Text="Nom" Grid.Column="1" Margin="10" />
+                    <Label Text="Salaire" Grid.Column="2" Margin="10" />
+                </Grid>
+            </ListView.Header>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding firstName}" Grid.Column="0" Margin="10" />
+                            <Label Text="{Binding lastName}" Grid.Column="1" Margin="10" />
+                            <Label Text="{Binding salary}" Grid.Column="2" Margin="10" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <!-- Utilisez la propriété Header pour afficher un message lorsque la liste est vide -->
+            <!--<ListView.Header>
+                <Label Text="Aucun enseignant enregistré." />
+            </ListView.Header>-->
+        </ListView>
+
+        <Button Text=" + " Clicked="OnTeacherPageButtonClicked" />
+        <Button Text="Accueil" Clicked="OnReturnToMainPageClicked" />
     </VerticalStackLayout>
 </ContentPage>
