@@ -13,4 +13,9 @@ public partial class StudentPage : ContentPage
 
         Navigation.PushAsync(new MainPage());
     }
+		private void OnStudentPageButtonClicked(object sender, EventArgs e)
+	{
+
+		Navigation.PushAsync(new StudentPage2());
+	}
 }

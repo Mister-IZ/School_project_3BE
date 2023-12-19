@@ -10,7 +10,7 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-    <!-- Ajoutez un bouton pour revenir à la MainPage -->
-    <Button Text="Revenir à l'Acceuil " Clicked="OnReturnToMainPageClicked" />
+    <Button Text=" + " Clicked="OnStudentPageButtonClicked" />
+    <Button Text="Acceuil" Clicked="OnReturnToMainPageClicked" />
     </VerticalStackLayout>
 </ContentPage>

@@ -12,4 +12,9 @@ public partial class ActivityPage : ContentPage
 
         Navigation.PushAsync(new MainPage());
     }
+		private void OnActivityPageButtonClicked(object sender, EventArgs e)
+	{
+
+		Navigation.PushAsync(new ActivityPage2());
+	}
 }
