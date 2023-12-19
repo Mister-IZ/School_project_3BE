@@ -23,7 +23,7 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Bulletin_School"
+                Text="Bienvenue à l'ECAM ! Voici toutes les options de notre app :"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Bienvenue"
                 FontSize="18"

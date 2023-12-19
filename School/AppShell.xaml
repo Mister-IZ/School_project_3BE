@@ -17,15 +17,15 @@
     <ShellContent
         Title="Etudiant"
         ContentTemplate="{DataTemplate Views:StudentPage}"
-        Route="MainPage" />
+        Route="Views.StudentPage" />
     <ShellContent
         Title="Professeur"
         ContentTemplate="{DataTemplate Views:TeacherPage}"
-        Route="MainPage" />
+        Route="Views.TeacherPage" />
     <ShellContent
         Title="Activité"
         ContentTemplate="{DataTemplate Views:ActivityPage}"
-        Route="MainPage" />
+        Route="Views.ActivityPage" />
     </TabBar>
 
 </Shell>
