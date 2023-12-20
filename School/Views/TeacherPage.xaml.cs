@@ -41,16 +41,25 @@ public partial class TeacherPage : ContentPage
                     // Assurez-vous que la ligne contient le nombre d'éléments attendu
                     if (teacherData.Length == 3)
                     {
-                        // Créez un nouvel enseignant à partir des données
-                        var teacher = new TeacherModel
-                        {
-                            firstName = teacherData[0].Trim(),
-                            lastName = teacherData[1].Trim(),
-                            salary = teacherData[2].Trim()
-                        };
+                        // Vérifiez si l'enseignant existe déjà dans la liste
+                        var existingTeacher = teachers.FirstOrDefault(t =>
+                            t.firstName == teacherData[0].Trim() &&
+                            t.lastName == teacherData[1].Trim() &&
+                            t.salary == teacherData[2].Trim());
 
-                        // Ajoutez l'enseignant à la liste
-                        teachers.Add(teacher);
+                        if (existingTeacher == null)
+                        {
+                            // Créez un nouvel enseignant à partir des données
+                            var teacher = new TeacherModel
+                            {
+                                firstName = teacherData[0].Trim(),
+                                lastName = teacherData[1].Trim(),
+                                salary = teacherData[2].Trim()
+                            };
+
+                            // Ajoutez l'enseignant à la liste
+                            teachers.Add(teacher);
+                        }
                     }
                     else
                     {
@@ -73,6 +82,7 @@ public partial class TeacherPage : ContentPage
         }
     }
 
+
     private void OnDeleteClicked(object sender, EventArgs e)
     {
         // Récupérez l'activité associée au bouton de suppression
@@ -85,14 +95,34 @@ public partial class TeacherPage : ContentPage
         LoadTeachersList();
     }
     private void DeleteTeacher(TeacherModel teacher)
+{
+    try
     {
-        try
+        string filePath = "teachers.txt";
+
+        // Lisez toutes les lignes du fichier
+        var teacherLines = File.ReadAllLines(filePath);
+
+        // Vérifiez si l'enseignant existe déjà dans le fichier
+        var teacherExists = teacherLines.Any(line =>
         {
-            string filePath = "teachers.txt";
+            var data = line.Split(',');
+            if (data.Length == 3)
+            {
+                var existingTeacher = new TeacherModel
+                {
+                    firstName = data[0].Trim(),
+                    lastName = data[1].Trim(),
+                    salary = data[2].Trim()
+                };
 
-            // Lisez toutes les lignes du fichier
-            var teacherLines = File.ReadAllLines(filePath);
+                return existingTeacher.Equals(teacher);
+            }
+            return false;
+        });
 
+        if (teacherExists)
+        {
             // Filtrez les lignes pour exclure celle correspondant à l'enseignant à supprimer
             var updatedLines = teacherLines.Where(line =>
             {
@@ -115,12 +145,18 @@ public partial class TeacherPage : ContentPage
             // Écrivez les lignes mises à jour dans le fichier
             File.WriteAllLines(filePath, updatedLines);
         }
-        catch (Exception ex)
+        else
         {
-            // Gérez les erreurs lors de la suppression de l'enseignant ici
-            Console.WriteLine($"Erreur lors de la suppression de l'enseignant : {ex.Message}");
+            Console.WriteLine($"L'enseignant {teacher.firstName} {teacher.lastName} n'existe pas dans le fichier.");
         }
+    }
+    catch (Exception ex)
+    {
+        // Gérez les erreurs lors de la suppression de l'enseignant ici
+        Console.WriteLine($"Erreur lors de la suppression de l'enseignant : {ex.Message}");
+    }
 }
+
 
 
 

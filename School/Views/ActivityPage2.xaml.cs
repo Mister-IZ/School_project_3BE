@@ -64,6 +64,15 @@ public partial class ActivityPage2 : ContentPage
 
     private void OnCreateActivityClicked(object sender, EventArgs e)
     {
+        // Vérifiez si un enseignant a été sélectionné
+        if (string.IsNullOrWhiteSpace(courseTeacherPicker.SelectedItem?.ToString()))
+        {
+            // Affichez un message d'erreur
+            DisplayAlert("Erreur", "Vous devez sélectionner un professeur pour créer une matière.", "OK");
+            return; // Sortez de la méthode car la sélection est invalide
+        }
+
+        // Continuez avec la création de l'activité
         var activityModel = new ActivityModel
         {
             course = courseEntered.Text,
@@ -73,11 +82,12 @@ public partial class ActivityPage2 : ContentPage
             Teacher = courseTeacherPicker.SelectedItem?.ToString() ?? string.Empty,
         };
 
-        var activityRepository = new ActivityRepository();
-        activityRepository.SaveActivitys(activityModel);
+    var activityRepository = new ActivityRepository();
+    activityRepository.SaveActivitys(activityModel);
 
-        Navigation.PushAsync(new ActivityPage());
-    }
+    Navigation.PushAsync(new ActivityPage());
+}
+
 
     private void OnReturnToMainPageClicked(object sender, EventArgs e)
     {
