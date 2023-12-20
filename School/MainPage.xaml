@@ -48,13 +48,19 @@
                 Clicked="OnStudentPageButtonClicked"
                 HorizontalOptions="Center" 
                 TextColor="{DynamicResource TextColor}"/>
+            <Button
+                x:Name="EvaluationPageButton"
+                Text="Evaluer un étudiant"
+                Clicked="OnEvaluationPageButtonClicked"
+                HorizontalOptions="Center" 
+                TextColor="{DynamicResource TextColor}"/>
                 
             <!-- Séparation visuelle (espace) -->
             <BoxView HeightRequest="20" />
 
             <Button
                 x:Name="colorPageButton"
-                Text="Theme"
+                Text="Change de thème"
                 Clicked="OnColorPageButtonClicked"
                 HorizontalOptions="Center" 
                 TextColor="{DynamicResource TextColor}"/>

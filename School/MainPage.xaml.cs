@@ -17,7 +17,6 @@ namespace School
             Navigation.PushAsync(new TeacherPage2());
         }
 
-
 			private void OnActivityPageButtonClicked(object sender, EventArgs e)
         {
 
@@ -29,7 +28,11 @@ namespace School
 
             Navigation.PushAsync(new StudentPage2());
         }
+		    private void OnEvaluationPageButtonClicked(object sender, EventArgs e)
+        {
 
+            Navigation.PushAsync(new EvaluationPage());
+        }
         	private void OnColorPageButtonClicked(object sender, EventArgs e)
         {
 

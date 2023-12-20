@@ -26,6 +26,10 @@
         Title="Etudiant"
         ContentTemplate="{DataTemplate Views:StudentPage}"
         Route="Views.StudentPage" />
+    <ShellContent
+        Title="Bulletin"
+        ContentTemplate="{DataTemplate Views:BulletinPage}"
+        Route="Views.BulletinPage" />
     </TabBar>
 
 </Shell>
