@@ -76,7 +76,7 @@ public partial class ActivityPage2 : ContentPage
         var activityRepository = new ActivityRepository();
         activityRepository.SaveActivitys(activityModel);
 
-        Navigation.PushAsync(new MainPage());
+        Navigation.PushAsync(new ActivityPage());
     }
 
     private void OnReturnToMainPageClicked(object sender, EventArgs e)

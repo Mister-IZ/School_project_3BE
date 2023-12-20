@@ -73,6 +73,57 @@ public partial class TeacherPage : ContentPage
         }
     }
 
+    private void OnDeleteClicked(object sender, EventArgs e)
+    {
+        // Récupérez l'activité associée au bouton de suppression
+        var teacher = (TeacherModel)((Button)sender).CommandParameter;
+
+        // Appelez la méthode pour supprimer l'activité du fichier
+        DeleteTeacher(teacher);
+
+        // Mettez à jour la liste après la suppression
+        LoadTeachersList();
+    }
+    private void DeleteTeacher(TeacherModel teacher)
+    {
+        try
+        {
+            string filePath = "teachers.txt";
+
+            // Lisez toutes les lignes du fichier
+            var teacherLines = File.ReadAllLines(filePath);
+
+            // Filtrez les lignes pour exclure celle correspondant à l'enseignant à supprimer
+            var updatedLines = teacherLines.Where(line =>
+            {
+                var data = line.Split(',');
+                if (data.Length == 3)
+                {
+                    var existingTeacher = new TeacherModel
+                    {
+                        firstName = data[0].Trim(),
+                        lastName = data[1].Trim(),
+                        salary = data[2].Trim()
+                    };
+
+                    // Retournez true pour conserver la ligne si elle ne correspond pas à l'enseignant à supprimer
+                    return !existingTeacher.Equals(teacher);
+                }
+                return false;
+            });
+
+            // Écrivez les lignes mises à jour dans le fichier
+            File.WriteAllLines(filePath, updatedLines);
+        }
+        catch (Exception ex)
+        {
+            // Gérez les erreurs lors de la suppression de l'enseignant ici
+            Console.WriteLine($"Erreur lors de la suppression de l'enseignant : {ex.Message}");
+        }
+}
+
+
+
 
     private void OnReturnToMainPageClicked(object sender, EventArgs e)
     {

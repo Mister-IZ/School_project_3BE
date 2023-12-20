@@ -19,12 +19,14 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
 
                     <Label Text="Cours" Grid.Column="0" Margin="10" />
                     <Label Text="Code" Grid.Column="1" Margin="10" />
                     <Label Text="ECTS" Grid.Column="2" Margin="10" />
                     <Label Text="Enseignant" Grid.Column="3" Margin="10" />
+                    <Label Text="" Grid.Column="4" Margin="10" />
                 </Grid>
             </ListView.Header>
 
@@ -37,12 +39,14 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
 
                             <Label Text="{Binding course}" Grid.Column="0" Margin="10" />
                             <Label Text="{Binding code}" Grid.Column="1" Margin="10" />
                             <Label Text="{Binding ECTS}" Grid.Column="2" Margin="10" />
                             <Label Text="{Binding Teacher}" Grid.Column="3" Margin="10" />
+                            <Button Text="Supprimer" Clicked="OnDeleteClicked" CommandParameter="{Binding .}" Grid.Column="4" Margin="10" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
