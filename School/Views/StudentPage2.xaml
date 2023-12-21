@@ -6,15 +6,19 @@
              Title="Formulaire des étudiants">
     <VerticalStackLayout>
         <Label 
-            Text="Veuillez entrer le nom d'un étudiant à inscrire"
+            Text="Veuillez inscrire un étudiant ainsi que les cours qu'il souhaite (cours par cours)"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-            <Entry x:Name="firstnameEntered" Placeholder="Entrez le prénom" />
-            <Entry x:Name="lastnameEntered" Placeholder="Entrez le nom" />
-            <Button x:Name="createStudentButton" Text="Créer étudiant" Clicked="OnCreateStudentClicked" />
-    
-    <!-- Ajoutez un bouton pour revenir à la MainPage -->
-    <Button Text="Acceuil" Clicked="OnReturnToMainPageClicked" />
+        <Entry x:Name="coursefirstname" Placeholder="Entrez le prénom de l'étudiant" />
+        <Entry x:Name="courselastname" Placeholder="Entrez le nom de l'étudiant" />
+
+        <!-- Utilisez le Picker pour la sélection de l'enseignant -->
+        <Picker x:Name="courseActivityPicker" Title="Sélectionnez une activité" />
+
+        <Button x:Name="createActivityButton" Text="Créer étudiant" Clicked="OnCreateActivityClicked" />
+
+        <!-- Ajoutez un bouton pour revenir à la MainPage -->
+        <Button Text="Accueil" Clicked="OnReturnToMainPageClicked" />
     </VerticalStackLayout>
 </ContentPage>
