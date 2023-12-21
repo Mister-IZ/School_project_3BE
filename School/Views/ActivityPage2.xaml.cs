@@ -2,8 +2,8 @@ namespace School.Views;
 
 public partial class ActivityPage2 : ContentPage
 {
-    // Ajoutez un champ pour stocker la liste des enseignants
-    private List<string> teacherList;
+    // // Ajoutez un champ pour stocker la liste des enseignants
+    // private List<string> teacherList;
 
     public ActivityPage2()
     {
@@ -26,8 +26,8 @@ public partial class ActivityPage2 : ContentPage
                 // Lisez toutes les lignes du fichier
                 var teacherLines = File.ReadAllLines(filePath);
 
-                // Initialisez la liste des enseignants
-                teacherList = new List<string>();
+                // Utilisez un HashSet pour stocker les noms uniques des enseignants
+                var uniqueTeachers = new HashSet<string>();
 
                 foreach (var teacherLine in teacherLines)
                 {
@@ -37,9 +37,9 @@ public partial class ActivityPage2 : ContentPage
                     // Assurez-vous que la ligne contient le nombre d'éléments attendu
                     if (teacherData.Length == 3)
                     {
-                        // Ajoutez le nom complet de l'enseignant à la liste
+                        // Ajoutez le nom complet de l'enseignant au HashSet
                         var fullName = $"{teacherData[0].Trim()} {teacherData[1].Trim()}";
-                        teacherList.Add(fullName);
+                        uniqueTeachers.Add(fullName);
                     }
                     else
                     {
@@ -47,8 +47,8 @@ public partial class ActivityPage2 : ContentPage
                     }
                 }
 
-                // Liez la liste des enseignants au Picker
-                courseTeacherPicker.ItemsSource = teacherList;
+                // Convertissez le HashSet en liste pour l'affecter à la source de données du Picker
+                courseTeacherPicker.ItemsSource = uniqueTeachers.ToList();
             }
             else
             {
@@ -61,6 +61,7 @@ public partial class ActivityPage2 : ContentPage
             Console.WriteLine($"Erreur lors de la lecture du fichier teachers.txt : {ex.Message}");
         }
     }
+
 
     private void OnCreateActivityClicked(object sender, EventArgs e)
     {

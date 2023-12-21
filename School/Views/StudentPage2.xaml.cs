@@ -28,7 +28,7 @@ namespace School.Views
             var studentRepository = new StudentRepository();
             studentRepository.SaveStudents(studentModel);
 
-            Navigation.PushAsync(new MainPage());
+            Navigation.PushAsync(new StudentPage());
         }
 
         private void OnReturnToMainPageClicked(object sender, EventArgs e)
