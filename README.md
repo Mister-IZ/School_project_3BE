@@ -35,6 +35,8 @@ Comme vous pouvez le constater, la classe `ActivityRepository` dans le fichier `
 
 ### Exemple du LSP :
 
-![Exemple du LSP](https://github.com/Mister-IZ/School_project_3BE/blob/main/Images/Capture%20d%E2%80%99e%CC%81cran%202023-12-21%20a%CC%80%2021.49.24.png?raw=true)(https://github.com/Mister-IZ/School_project_3BE/blob/main/Images/Capture%20d%E2%80%99e%CC%81cran%202023-12-21%20a%CC%80%2021.51.31.png?raw=true)
+![Exemple du LSP](
+![Image 1](https://github.com/Mister-IZ/School_project_3BE/blob/main/Images/Capture%20d%E2%80%99e%CC%81cran%202023-12-21%20a%CC%80%2021.49.24.png?raw=true) ![Image 2](https://github.com/Mister-IZ/School_project_3BE/blob/main/Images/Capture%20d%E2%80%99e%CC%81cran%202023-12-21%20a%CC%80%2021.51.31.png?raw=true)
+
 
 Dans la classe `ActivityPage` par exemple, on utilise l'héritage pour étendre les fonctionnalités de `ContentPage` afin de créer des pages spécifiques à notre application. Les instances de `ActivityPage` et `ActivityPage2` peuvent être utilisées partout où une instance de `ContentPage` est attendue, comme lors de la navigation dans l'application. Ces sous-classes peuvent être utilisées de manière transparente à la place de la classe de base (`ContentPage`) sans affecter la validité du programme.
