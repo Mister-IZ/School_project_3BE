@@ -3,13 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="School.Views.EvaluationPage"
              BackgroundColor="{DynamicResource BackgroundColor}"
-             Title="Evaluation des étudiants">
-
+             Title="Saisie des Évaluations">
     <VerticalStackLayout>
         <Label 
-            Text="ICI on doit afficher une liste avec les étudiants et chacun de leurs cours sous forme de grand tableau avec un champ d'entrée pour chaque cours ou on pourra noter l'étudiant sur 20 (condition : entre 0 et 20 sinon message d'erreur)"
+            Text="Veuillez entrer l'évaluation pour un cours et un étudiant"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
+        <Entry x:Name="courseNameEntered" Placeholder="Entrez le nom du cours" />
+        <Entry x:Name="studentNameEntered" Placeholder="Entrez le nom de l'étudiant" />
+        <Entry x:Name="gradeEntered" Placeholder="Entrez la note ou l'appréciation" />
+
+        <Button x:Name="createEvaluationButton" Text="Ajouter Évaluation" Clicked="OnCreateEvaluationClicked" />
+
+        <!-- Ajoutez un bouton pour revenir à la MainPage -->
+        <Button Text="Accueil" Clicked="OnReturnToMainPageClicked" />
     </VerticalStackLayout>
 </ContentPage>

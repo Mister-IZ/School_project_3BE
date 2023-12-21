@@ -38,6 +38,12 @@ namespace School
 
             Navigation.PushAsync(new ColorPage());
         }
+
+        private void OnNavigateToEvaluationPageClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new EvaluationPage());
+        }
+
     }
 }
 
