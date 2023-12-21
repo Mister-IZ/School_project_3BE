@@ -47,7 +47,6 @@ public partial class StudentPage : ContentPage
 						{
 							firstname = studentData[0].Trim(),
 							lastname = studentData[1].Trim(),
-							SelectedActivities = studentData.Skip(2).Select(a => a.Trim()).ToList()
 						};
 
 
@@ -72,6 +71,80 @@ public partial class StudentPage : ContentPage
         {
             // Handle errors when reading the students file here
             Console.WriteLine($"Error reading students file: {ex.Message}");
+        }
+    }
+    private void OnDeleteStudentClicked(object sender, EventArgs e)
+    {
+        // Récupérez l'étudiant associé au bouton de suppression
+        var student = (StudentModel)((Button)sender).CommandParameter;
+
+        // Appelez la méthode pour supprimer l'étudiant du fichier
+        DeleteStudent(student);
+
+        // Mettez à jour la liste après la suppression
+        LoadStudentList();
+    }
+
+    private void DeleteStudent(StudentModel student)
+    {
+        try
+        {
+            string filePath = "students.txt";
+
+            // Lisez toutes les lignes du fichier
+            var studentLines = File.ReadAllLines(filePath);
+
+            // Vérifiez si l'étudiant existe déjà dans le fichier
+            var studentExists = studentLines.Any(line =>
+            {
+                var data = line.Split(',');
+                if (data.Length >= 2) // Assurez-vous que la ligne contient au moins les champs 'firstname' et 'lastname'
+                {
+                    var existingStudent = new StudentModel
+                    {
+                        firstname = data[0].Trim(),
+                        lastname = data[1].Trim(),
+                        // Ajoutez d'autres champs ici si nécessaire
+                    };
+
+                    return existingStudent.Equals(student);
+                }
+                return false;
+            });
+
+            if (studentExists)
+            {
+                // Filtrez les lignes pour exclure celle correspondant à l'étudiant à supprimer
+                var updatedLines = studentLines.Where(line =>
+                {
+                    var data = line.Split(',');
+                    if (data.Length >= 2) // Assurez-vous que la ligne contient au moins les champs 'firstname' et 'lastname'
+                    {
+                        var existingStudent = new StudentModel
+                        {
+                            firstname = data[0].Trim(),
+                            lastname = data[1].Trim(),
+                            // Ajoutez d'autres champs ici si nécessaire
+                        };
+
+                        // Retournez true pour conserver la ligne si elle ne correspond pas à l'étudiant à supprimer
+                        return !existingStudent.Equals(student);
+                    }
+                    return false;
+                });
+
+                // Écrivez les lignes mises à jour dans le fichier
+                File.WriteAllLines(filePath, updatedLines);
+            }
+            else
+            {
+                Console.WriteLine($"L'étudiant {student.firstname} {student.lastname} n'existe pas dans le fichier.");
+            }
+        }
+        catch (Exception ex)
+        {
+            // Gérez les erreurs lors de la suppression de l'étudiant ici
+            Console.WriteLine($"Erreur lors de la suppression de l'étudiant : {ex.Message}");
         }
     }
 

@@ -13,10 +13,7 @@
         <Entry x:Name="coursefirstname" Placeholder="Entrez le prénom de l'étudiant" />
         <Entry x:Name="courselastname" Placeholder="Entrez le nom de l'étudiant" />
 
-        <!-- Utilisez le Picker pour la sélection de l'enseignant -->
-        <Picker x:Name="courseActivityPicker" Title="Sélectionnez une activité" />
-
-        <Button x:Name="createActivityButton" Text="Créer étudiant" Clicked="OnCreateActivityClicked" />
+        <Button x:Name="createStudentButton" Text="Créer étudiant" Clicked="OnCreateStudentClicked" />
 
         <!-- Ajoutez un bouton pour revenir à la MainPage -->
         <Button Text="Accueil" Clicked="OnReturnToMainPageClicked" />
