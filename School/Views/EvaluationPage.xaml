@@ -7,9 +7,22 @@
 
     <VerticalStackLayout>
         <Label 
-            Text="ICI on doit afficher une liste avec les étudiants et chacun de leurs cours sous forme de grand tableau avec un champ d'entrée pour chaque cours ou on pourra noter l'étudiant sur 20 (condition : entre 0 et 20 sinon message d'erreur)"
+            Text="Veuillez entrer l'évaluation d'un étudiant pour un cours"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <Picker x:Name="courseNamePicker" Title="Sélectionnez un cours" />
+        <Picker x:Name="studentNamePicker" Title="Sélectionnez un étudiant" />
+        <Picker x:Name="noteEnteredPicker" Title="Sélectionnez la note" />
+        <Picker x:Name="appreciationEnteredPicker" Title="Sélectionner l'appréciation" />
+
+
+        <Button x:Name="createEvaluationButton" Text="Enregistrer l'évaluation" Clicked="OnCreateEvaluationClicked" />
+
+        <!-- Ajoutez un bouton pour revenir à la MainPage -->
+        <Button Text="Accueil" Clicked="OnReturnToMainPageClicked" />
+
+        
 
     </VerticalStackLayout>
 </ContentPage>
