@@ -35,7 +35,6 @@ Comme vous pouvez le constater, la classe `ActivityRepository` dans le fichier `
 
 ### Exemple du LSP :
 
-![Exemple du LSP](
 ![Image 1](https://github.com/Mister-IZ/School_project_3BE/blob/main/Images/Capture%20d%E2%80%99e%CC%81cran%202023-12-21%20a%CC%80%2021.49.24.png?raw=true) ![Image 2](https://github.com/Mister-IZ/School_project_3BE/blob/main/Images/Capture%20d%E2%80%99e%CC%81cran%202023-12-21%20a%CC%80%2021.51.31.png?raw=true)
 
 
