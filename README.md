@@ -1,3 +1,28 @@
+# Projet School 2023
+
+## Introduction
+
+Bienvenue dans le **Projet School 2023**, une initiative ambitieuse visant à créer une interface MAUI complète pour la gestion des données scolaires. Dans le cadre de cet exercice, nous avons revisité les concepts explorés lors du laboratoire 2 (dispo sur https://quentin.lurkin.xyz/courses/poo/labs/lab2/index.pdf) pour concevoir une application offrant les fonctionnalités suivantes :
+
+- Création et enregistrement d'enseignants.
+- Création et enregistrement d'activités éducatives.
+- Liaison entre les activités et les enseignants.
+- Création et enregistrement des étudiants.
+- Attribution d'évaluations (notes ou appréciations) pour les cours des étudiants.
+- Affichage du bulletin des étudiants.
+
+En plus des fonctionnalités essentielles, nous avons incorporé deux fonctionnalités supplémentaires pour améliorer l'expérience utilisateur :
+
+1. **Thèmes Visuels Personnalisés :** Offrant une personnalisation visuelle, les utilisateurs peuvent choisir parmi différents thèmes pour adapter l'interface à leurs préférences et assurer un confort visuel optimal.
+
+2. **Suppression Directe :** Pour une gestion pratique, les utilisateurs ont la possibilité de supprimer directement des enseignants, des étudiants, ou d'autres éléments directement au sein de l'application. Cela permet une manipulation efficace et rapide des données.
+
+## Captures d'écrans
+
+Pour une illustration complète de l'application, vous trouverez des captures d'écran dans le dossier *Screenshots*. Veuillez noter que l'ensemble du code a été développé et testé sur Windows, et les captures d'écran reflètent l'aspect de l'application sous cet OS.
+
+!(https://github.com/Mister-IZ/School_project_3BE/blob/main/Screenshots/MAUI%20(1).png?raw=true)
+
 # Principes SOLID
 
 Les principes SOLID sont un ensemble de cinq principes de conception logicielle qui visent à créer des systèmes logiciels plus compréhensibles, flexibles et maintenables. Ce sont des principes clés pour le développement logiciel orienté objet.

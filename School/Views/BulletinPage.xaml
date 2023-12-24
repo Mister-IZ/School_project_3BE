@@ -6,7 +6,6 @@
              Title="Le Bulletin">
 
     <StackLayout>
-        <Label Text="Sélectionnez un étudiant" VerticalOptions="Center" HorizontalOptions="Center" />
         <Picker x:Name="studentPicker" Title="Sélectionnez un étudiant" />
         <Button x:Name="viewGradesButton" Text="Voir le bulletin" Clicked="OnViewBulletinClicked" />
         
