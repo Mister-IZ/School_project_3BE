@@ -5,6 +5,8 @@ public class EvaluationModel
     public string Note { get; set; } // Note 
     public string Appreciation { get; set; } // Appréciation
 
+    
+
     public int ConvertToNumericGrade()
     {
         // Votre logique pour la conversion

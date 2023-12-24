@@ -133,7 +133,7 @@ public partial class EvaluationPage : ContentPage
 		// Convertissez l'appréciation en note numérique si nécessaire
 		if (!string.IsNullOrEmpty(evaluationModel.Appreciation))
 		{
-			evaluationModel.Appreciation = evaluationModel.ConvertToNumericGrade().ToString();
+			evaluationModel.Note = evaluationModel.ConvertToNumericGrade().ToString();
 		}
 
 		var evaluationRepository = new EvaluationRepository();

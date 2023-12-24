@@ -2,11 +2,22 @@ namespace School.Views
 {
     public partial class BulletinPage : ContentPage
     {
+        private BulletinViewModel viewModel;
+
         public BulletinPage()
         {
             InitializeComponent();
+            viewModel = new BulletinViewModel();
+            BindingContext = viewModel;
 
             // Appelez les méthodes de chargement ici pour remplir les Picker
+            LoadStudentsPicker();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
             LoadStudentsPicker();
         }
 
@@ -14,17 +25,31 @@ namespace School.Views
         {
             try
             {
-                string filePath = "students.txt";
+                string filePath = "evaluations.txt";
 
                 if (File.Exists(filePath))
                 {
                     var studentLines = File.ReadAllLines(filePath);
+                    var studentNames = new List<string>();
 
-                    // Supposons que chaque ligne du fichier d'étudiants représente un étudiant
-                    var students = new List<string>(studentLines);
+                    foreach (var line in studentLines)
+                    {
+                        // Utilisez le séparateur approprié pour votre fichier txt (par exemple, la virgule)
+                        var studentInfo = line.Split(',');
 
-                    // Affectez la liste des étudiants au Picker
-                    studentPicker.ItemsSource = students;
+                        if (studentInfo.Length >= 3) // Assurez-vous de récupérer le bon indice
+                        {
+                            var studentFullName = $"{studentInfo[1].Trim()}, {studentInfo[2].Trim()}";
+                            
+                            // Vérifier si l'étudiant est déjà dans la liste avant de l'ajouter
+                            if (!studentNames.Contains(studentFullName))
+                            {
+                                studentNames.Add(studentFullName);
+                            }
+                        }
+                    }
+
+                    studentPicker.ItemsSource = studentNames;
                 }
                 else
                 {
@@ -37,61 +62,61 @@ namespace School.Views
             }
         }
 
-        private void OnViewGradesClicked(object sender, EventArgs e)
+
+
+        private void OnViewBulletinClicked(object sender, EventArgs e)
         {
             var selectedStudent = studentPicker.SelectedItem?.ToString();
 
             if (!string.IsNullOrEmpty(selectedStudent))
             {
-                var grades = LoadStudentGrades(selectedStudent);
-                DisplayGradesInUI(grades);
-                var average = CalculateAverage(grades);
-                averageLabel.Text = $"La moyenne générale de {selectedStudent} est de {average:F2}";
+                viewModel.ClearGrades(); // Pour s'assurer que le tableau est vide avant de charger de nouvelles données
+
+                try
+                {
+                    string filePath = "evaluations.txt";
+
+                    if (File.Exists(filePath))
+                    {
+                        var studentLines = File.ReadAllLines(filePath);
+
+                        foreach (var line in studentLines)
+                        {
+                            // Utilisez le séparateur approprié pour votre fichier txt (par exemple, la virgule)
+                            var studentInfo = line.Split(',');
+
+                            if (studentInfo.Length >= 3) // Assurez-vous de récupérer le bon indice
+                            {
+                                var studentFullName = $"{studentInfo[1].Trim()}, {studentInfo[2].Trim()}";
+
+                                if (selectedStudent.Equals(studentFullName))
+                                {
+                                    var grade = new EvaluationModel
+                                    {
+                                        Course = studentInfo[0].Trim(),
+                                        Student = studentFullName,
+                                        Note = studentInfo[3].Trim(),
+                                        Appreciation = studentInfo.Length > 4 ? studentInfo[4].Trim() : string.Empty
+                                    };
+
+                                    viewModel.AddGrade(grade);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Le fichier d'évaluations n'existe pas.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Erreur lors de la lecture du fichier d'évaluations : {ex.Message}");
+                }
             }
             else
             {
-                DisplayAlert("Sélectionnez un étudiant", "Veuillez sélectionner un étudiant avant de voir les notes.", "OK");
-            }
-        }
-
-		private void OnGradeSelected(object sender, SelectedItemChangedEventArgs e)
-		{
-			// e.SelectedItem contient l'objet sélectionné dans la liste
-			if (e.SelectedItem is EvaluationModel selectedGrade)
-			{
-				// Faites quelque chose avec l'objet sélectionné, par exemple affichez-le dans une autre vue/page
-				// Vous pouvez également naviguer vers une autre page pour afficher les détails de l'évaluation
-				Navigation.PushAsync(new EvaluationModel(selectedGrade));
-			}
-
-			// Effacez la sélection pour permettre de sélectionner à nouveau
-			gradesListView.SelectedItem = null;
-		}
-
-
-        private List<EvaluationModel> LoadStudentGrades(string studentName)
-        {
-            var evaluationRepository = new EvaluationRepository();
-            return evaluationRepository.GetGradesByStudent(studentName);
-        }
-
-        private void DisplayGradesInUI(List<EvaluationModel> grades)
-        {
-            // Ajoutez la logique pour afficher les évaluations dans l'interface utilisateur
-            // Utilisez un ListView, par exemple
-			gradesListView.ItemsSource = grades;
-        }
-
-        private double CalculateAverage(List<EvaluationModel> grades)
-        {
-            if (grades.Any())
-            {
-                var totalPoints = grades.Sum(grade => grade.ConvertToNumericGrade());
-                return (double)totalPoints / grades.Count;
-            }
-            else
-            {
-                return 0;
+                DisplayAlert("Erreur", "Veuillez sélectionner un étudiant.", "OK");
             }
         }
     }

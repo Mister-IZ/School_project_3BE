@@ -5,26 +5,45 @@
              BackgroundColor="{DynamicResource BackgroundColor}"
              Title="Le Bulletin">
 
-    <VerticalStackLayout>
+    <StackLayout>
         <Label Text="Sélectionnez un étudiant" VerticalOptions="Center" HorizontalOptions="Center" />
         <Picker x:Name="studentPicker" Title="Sélectionnez un étudiant" />
-        <Button x:Name="viewGradesButton" Text="Voir le bulletin" Clicked="OnViewGradesClicked" />
+        <Button x:Name="viewGradesButton" Text="Voir le bulletin" Clicked="OnViewBulletinClicked" />
+        
+        <ListView x:Name="gradesListView" HasUnevenRows="True" ItemsSource="{Binding Grades}">
+            <ListView.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
-        <ListView x:Name="gradesListView" ItemSelected="OnGradeSelected">
+                    <Label Text="Cours/Prof" Grid.Column="0" Margin="20" />
+                    <Label Text="Notes sur 20" Grid.Column="1" Margin="20" />
+                    <Label Text="Appreciation" Grid.Column="2" Margin="20" />
+                </Grid>
+            </ListView.Header>
+
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
-                            <Label Text="{Binding Course}" />
-                            <Label Text="{Binding Note, StringFormat='Note: {0}'}" />
-                            <Label Text="{Binding Appreciation, StringFormat='Appréciation: {0}'}" />
-                        </StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Course}" Grid.Column="0" Margin="20" />
+                            <Label Text="{Binding Note}" Grid.Column="1" Margin="20" />
+                            <Label Text="{Binding Appreciation}" Grid.Column="2" Margin="20" />
+                            
+                        </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-
-        <Label x:Name="averageLabel" Text="" VerticalOptions="End" HorizontalOptions="Center" />
-    </VerticalStackLayout>
+        <Label Text="{Binding Average, StringFormat='Moyenne = {0:F2}'}" Margin="20" />
+    </StackLayout>
 </ContentPage>
