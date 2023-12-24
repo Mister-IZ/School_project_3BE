@@ -10,7 +10,6 @@ namespace School.Views
             viewModel = new BulletinViewModel();
             BindingContext = viewModel;
 
-            // Appelez les méthodes de chargement ici pour remplir les Picker
             LoadStudentsPicker();
         }
 
@@ -34,14 +33,12 @@ namespace School.Views
 
                     foreach (var line in studentLines)
                     {
-                        // Utilisez le séparateur approprié pour votre fichier txt (par exemple, la virgule)
                         var studentInfo = line.Split(',');
 
-                        if (studentInfo.Length >= 3) // Assurez-vous de récupérer le bon indice
+                        if (studentInfo.Length >= 3) 
                         {
                             var studentFullName = $"{studentInfo[1].Trim()}, {studentInfo[2].Trim()}";
                             
-                            // Vérifier si l'étudiant est déjà dans la liste avant de l'ajouter
                             if (!studentNames.Contains(studentFullName))
                             {
                                 studentNames.Add(studentFullName);
@@ -70,7 +67,7 @@ namespace School.Views
 
             if (!string.IsNullOrEmpty(selectedStudent))
             {
-                viewModel.ClearGrades(); // Pour s'assurer que le tableau est vide avant de charger de nouvelles données
+                viewModel.ClearGrades(); 
 
                 try
                 {
@@ -82,10 +79,9 @@ namespace School.Views
 
                         foreach (var line in studentLines)
                         {
-                            // Utilisez le séparateur approprié pour votre fichier txt (par exemple, la virgule)
                             var studentInfo = line.Split(',');
 
-                            if (studentInfo.Length >= 3) // Assurez-vous de récupérer le bon indice
+                            if (studentInfo.Length >= 3) 
                             {
                                 var studentFullName = $"{studentInfo[1].Trim()}, {studentInfo[2].Trim()}";
 

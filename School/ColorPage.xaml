@@ -13,7 +13,6 @@
                     SelectedItem="{Binding SelectedTheme}"
                     ItemDisplayBinding="{Binding Name}"/>
             
-            <!-- Ajoutez un bouton pour revenir à la MainPage -->
             <Button Text="Revenir à l'Acceuil " Clicked="OnReturnToMainPageClicked" />
 
         </VerticalStackLayout>

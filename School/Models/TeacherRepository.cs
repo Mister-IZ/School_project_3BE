@@ -1,7 +1,7 @@
 
 public class TeacherRepository
 {
-    public void SaveTeachers(TeacherModel teacher) ///méthode dispo partt qui renvoie rien. Prend en param un prof de type TeacherModel appelé teacher
+    public void SaveTeachers(TeacherModel teacher) 
     {
         string filePath = "teachers.txt";
         string teacherLine = $"{teacher.firstName}, {teacher.lastName}, {teacher.salary}€";

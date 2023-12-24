@@ -10,7 +10,6 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <!-- Ajoutez un ListView pour afficher la liste des enseignants -->
         <ListView x:Name="ActivityListView" HasUnevenRows="True">
             <ListView.Header>
                 <Grid>
@@ -51,10 +50,6 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            <!-- Utilisez la propriété Header pour afficher un message lorsque la liste est vide -->
-            <!--<ListView.Header>
-                <Label Text="Aucun enseignant enregistré." />
-            </ListView.Header>-->
         </ListView>
 
     <Button Text=" + " Clicked="OnActivityPageButtonClicked" />

@@ -14,12 +14,10 @@
         <Entry x:Name="courseCode" Placeholder="Entrez le code de l'activité" />
         <Entry x:Name="courseCredits" Placeholder="Entrez le nombre de crédits de l'activité" />
 
-        <!-- Utilisez le Picker pour la sélection de l'enseignant -->
         <Picker x:Name="courseTeacherPicker" Title="Sélectionnez un enseignant" />
 
         <Button x:Name="createActivityButton" Text="Créer activité" Clicked="OnCreateActivityClicked" />
 
-        <!-- Ajoutez un bouton pour revenir à la MainPage -->
         <Button Text="Accueil" Clicked="OnReturnToMainPageClicked" />
     </VerticalStackLayout>
 </ContentPage>

@@ -12,8 +12,6 @@ namespace School
 
         private void OnTeacherPageButtonClicked(object sender, EventArgs e)
         {
-            // Ajoutez le code ici pour gérer le clic sur le bouton "Créer Enseignant"
-            // Par exemple, vous pouvez naviguer vers la page des enseignants comme vous l'avez fait pour le bouton Counter.
             Navigation.PushAsync(new TeacherPage2());
         }
 

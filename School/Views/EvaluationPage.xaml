@@ -19,7 +19,6 @@
 
         <Button x:Name="createEvaluationButton" Text="Enregistrer l'évaluation" Clicked="OnCreateEvaluationClicked" />
 
-        <!-- Ajoutez un bouton pour revenir à la MainPage -->
         <Button Text="Accueil" Clicked="OnReturnToMainPageClicked" />
 
         

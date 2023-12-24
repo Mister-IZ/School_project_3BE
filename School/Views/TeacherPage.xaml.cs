@@ -6,7 +6,6 @@ public partial class TeacherPage : ContentPage
     {
         InitializeComponent();
 
-        // Ligne pour charger et afficher la liste des enseignants lors de la création de la page
         LoadTeachersList();
     }
 
@@ -14,34 +13,26 @@ public partial class TeacherPage : ContentPage
     {
         base.OnAppearing();
 
-        // Mettez à jour la liste des enseignants chaque fois que la page devient visible
         LoadTeachersList();
     }
-    // Méthode pour charger et afficher la liste des enseignants
     private void LoadTeachersList()
     {
         try
         {
             string filePath = "teachers.txt";
 
-            // Vérifiez si le fichier existe avant de tenter de le lire
             if (File.Exists(filePath))
             {
-                // Lisez toutes les lignes du fichier
                 var teacherLines = File.ReadAllLines(filePath);
 
-                // Créez une liste d'enseignants à partir des lignes du fichier
                 var teachers = new List<TeacherModel>();
 
                 foreach (var teacherLine in teacherLines)
                 {
-                    // Divisez chaque ligne pour obtenir les données individuelles (nom, prénom, salaire, etc.)
                     var teacherData = teacherLine.Split(',');
 
-                    // Assurez-vous que la ligne contient le nombre d'éléments attendu
                     if (teacherData.Length == 3)
                     {
-                        // Vérifiez si l'enseignant existe déjà dans la liste
                         var existingTeacher = teachers.FirstOrDefault(t =>
                             t.firstName == teacherData[0].Trim() &&
                             t.lastName == teacherData[1].Trim() &&
@@ -49,7 +40,6 @@ public partial class TeacherPage : ContentPage
 
                         if (existingTeacher == null)
                         {
-                            // Créez un nouvel enseignant à partir des données
                             var teacher = new TeacherModel
                             {
                                 firstName = teacherData[0].Trim(),
@@ -57,7 +47,6 @@ public partial class TeacherPage : ContentPage
                                 salary = teacherData[2].Trim()
                             };
 
-                            // Ajoutez l'enseignant à la liste
                             teachers.Add(teacher);
                         }
                     }
@@ -67,17 +56,15 @@ public partial class TeacherPage : ContentPage
                     }
                 }
 
-                // Liez la liste des enseignants au ListView
                 TeachersListView.ItemsSource = teachers;
             }
             else
             {
-                // Gérez le cas où le fichier n'existe pas
+                // Rien
             }
         }
         catch (Exception ex)
         {
-            // Gérez les erreurs lors de la lecture du fichier ici
             Console.WriteLine($"Erreur lors de la lecture du fichier teachers.txt : {ex.Message}");
         }
     }

@@ -9,7 +9,6 @@ public class ActivityModel
     {
         if (obj is ActivityModel other)
         {
-            // Comparez les propriétés individuelles au lieu des références d'objets
             return course == other.course
                 && code == other.code
                 && ECTS == other.ECTS
@@ -21,7 +20,6 @@ public class ActivityModel
 
     public override int GetHashCode()
     {
-        // Implémentez GetHashCode pour éviter les avertissements du compilateur
         return HashCode.Combine(course, code, ECTS, Teacher);
     }
 }

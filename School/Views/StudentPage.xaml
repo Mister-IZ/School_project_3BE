@@ -10,7 +10,6 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <!-- Add a ListView to display the list of students -->
         <ListView x:Name="StudentListView" HasUnevenRows="True">
             <ListView.Header>
                 <Grid>

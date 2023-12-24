@@ -1,4 +1,3 @@
-
 public class ActivityRepository : ContentPage
 {
 	public void SaveActivitys(ActivityModel activity) 

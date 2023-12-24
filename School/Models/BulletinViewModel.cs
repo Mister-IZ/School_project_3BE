@@ -49,13 +49,10 @@ namespace School.Views
             {
                 Grades.Add(grade);
 
-                // Assurez-vous que la colonne des notes existe et n'est pas vide
                 if (grade.Note != null && double.TryParse(grade.Note, out double score))
                 {
-                    // Vérifiez si la note est valide (supérieure à zéro)
                     if (score >= 0)
                     {
-                        // Ajustez la note en fonction de l'échelle (20 points dans ce cas)
                         score = score * 20 / 20;
 
                         totalScore += score;
@@ -64,10 +61,8 @@ namespace School.Views
                 }
             }
 
-            // Calculez la moyenne
             if (count > 0)
             {
-                // Utilisez (count + 1) comme dénominateur pour compenser l'ajout de 1 dans AddGrade
                 Average = totalScore / (count + 1);
             }
             else
@@ -80,10 +75,9 @@ namespace School.Views
         {
             Grades.Add(grade);
 
-            // Mettez à jour la moyenne en ajoutant la nouvelle note
             if (double.TryParse(grade.Note, out double score))
             {
-                // Utilisez (Grades.Count - 1) comme dénominateur pour compenser l'ajout de 1
+                
                 Average = (Average * (Grades.Count - 1) + score) / Grades.Count;
             }
         }
@@ -95,7 +89,7 @@ namespace School.Views
         public void ClearGrades()
         {
             Grades.Clear();
-            Average = 0; // Assurez-vous de réinitialiser la moyenne lorsque vous effacez les notes
+            Average = 0; 
         }
 
 

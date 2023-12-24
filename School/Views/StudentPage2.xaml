@@ -15,7 +15,6 @@
 
         <Button x:Name="createStudentButton" Text="Créer étudiant" Clicked="OnCreateStudentClicked" />
 
-        <!-- Ajoutez un bouton pour revenir à la MainPage -->
         <Button Text="Accueil" Clicked="OnReturnToMainPageClicked" />
     </VerticalStackLayout>
 </ContentPage>
