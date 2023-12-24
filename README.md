@@ -23,7 +23,7 @@ Pour une illustration complète de l'application, vous trouverez des captures d'
 
 ![Acceuil](https://github.com/Mister-IZ/School_project_3BE/blob/main/Screenshots/MAUI%20(1).png?raw=true)
 
-#
+# 
 
 # Principes SOLID
 
