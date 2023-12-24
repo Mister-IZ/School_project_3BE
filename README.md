@@ -21,7 +21,9 @@ En plus des fonctionnalités essentielles, nous avons incorporé deux fonctionna
 
 Pour une illustration complète de l'application, vous trouverez des captures d'écran dans le dossier *Screenshots*. Veuillez noter que l'ensemble du code a été développé et testé sur Windows, et les captures d'écran reflètent l'aspect de l'application sous cet OS.
 
-!(https://github.com/Mister-IZ/School_project_3BE/blob/main/Screenshots/MAUI%20(1).png?raw=true)
+![Acceuil](https://github.com/Mister-IZ/School_project_3BE/blob/main/Screenshots/MAUI%20(1).png?raw=true)
+
+#
 
 # Principes SOLID
 
