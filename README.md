@@ -1,4 +1,4 @@
-# Projet School 2023
+Projet School 2023
 
 ## Introduction
 
@@ -66,3 +66,15 @@ Comme vous pouvez le constater, la classe `ActivityRepository` dans le fichier `
 
 
 Dans la classe `ActivityPage` par exemple, on utilise l'héritage pour étendre les fonctionnalités de `ContentPage` afin de créer des pages spécifiques à notre application. Les instances de `ActivityPage` et `ActivityPage2` peuvent être utilisées partout où une instance de `ContentPage` est attendue, comme lors de la navigation dans l'application. Ces sous-classes peuvent être utilisées de manière transparente à la place de la classe de base (`ContentPage`) sans affecter la validité du programme.
+
+
+
+# Diagramme UML :
+
+## Voici notre diagramme de classe afin de mieux comprendre les échanges entre les classes :
+
+![Image 3](https://github.com/Mister-IZ/School_project_3BE/blob/main/Images/Capture%20d%E2%80%99e%CC%81cran%202024-01-22%20a%CC%80%2021.56.40.png)
+
+À noter que les couleurs n'ont pas de significations particulières, c'est juste pour la visibilité.
+Les flèches normales sont bien des relations d'héritages.
+
