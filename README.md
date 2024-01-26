@@ -71,7 +71,7 @@ Dans la classe `ActivityPage` par exemple, on utilise l'héritage pour étendre 
 
 # Diagramme UML :
 
-Voici notre diagramme de classe afin de mieux comprendre les échanges entre ces dernières :
+Voici notre diagramme de classe afin de mieux comprendre les échanges entre nos classes Model et Repository :
 
 ![Image 3](https://github.com/Mister-IZ/School_project_3BE/blob/main/Images/Capture%20d%E2%80%99e%CC%81cran%202024-01-22%20a%CC%80%2021.56.40.png)
 
@@ -83,5 +83,5 @@ Voici notre diagramme de séquence concernant le chargement des notes pour les �
 
 ![Image 4](https://github.com/Mister-IZ/School_project_3BE/blob/main/Images/Capture%20d%E2%80%99e%CC%81cran%202024-01-22%20a%CC%80%2021.56.48.png)
 
-Certains messages n'ont pas méthodes spécifiques car il s'agit juste d'un échange de données.
+Certains messages n'ont pas de méthodes spécifiques car il s'agit juste d'un échange de données.
 
